@@ -1,0 +1,28 @@
+Relevant Coursework: Statistical Machine Learning, Artificial Intelligence, 
+Knowledge Representation, Data Processing at Scale, 
+Distributed and Multiprocessor Operating Systems, Data Visualization
+
+Courses to feature (strongest fit)
+
+CSE 575 — Statistical Machine Learning
+
+CSE 571 — Artificial Intelligence
+
+CSE 579 — Knowledge Representation (full title spans two lines on the transcript)
+
+CSE 511 — Data Processing at Scale (Big Data/Spark)
+
+CSE 578 — Data Visualization
+CSE 531 - Distributed and Multiprocessor Operating Systems
+
+Optional adds (nice signal for research software & governance)
+
+CSE 565 — Software Verification/Validation/Testing
+
+CSE 545 — Software Security
+
+CSE 598 — Special Topics: Advanced Software Analysis & Design
+
+How to list on your résumé (one concise line under Education)
+
+Relevant Coursework: Statistical Machine Learning, Artificial Intelligence, Knowledge Representation, Data Processing at Scale, Data Visualization (plus Software Verification/Validation, Software Security if space allows)

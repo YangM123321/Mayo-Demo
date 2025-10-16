@@ -1,0 +1,5 @@
+patient_id,encounter_id,lab_code,lab_value,unit,collected_time
+P001,E001,GLU_LOCAL,185,mg_dl,2024-01-01 08:21
+P001,E001,HGB_LOCAL,10.8,g/dl,2024/01/01 08:35
+P002,E003,GLU_LOCAL,95,mg/dL,01-03-2024 09:10
+P003,E007,HGB_LOCAL,12.9,g/dl,Jan 05 2024 10:00

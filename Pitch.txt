@@ -1,0 +1,320 @@
+This demo builds a Knowledge Graph (KG) to show how different pieces of clinical data—like lab tests and diseases—are connected.
+By using a KG, we turn scattered lab results into a map of relationships that’s easy to explore, search, and analyze.
+------------------------------------
+
+My demo turns raw hospital lab results into a clear, searchable, and privacy-protected 
+map of tests and diseases, making it easy for anyone—from doctors to computers—to find 
+and use the right medical information.
+---------------------------------
+This demo shows a miniature end-to-end Clinical Knowledge Graph and NLP pipeline.
+Starting with raw lab results, I normalize the data to LOINC codes, convert them to 
+FHIR Observations, load relationships into a Neo4j graph, and expose multiple APIs—for 
+querying, classifying free-text notes, retrieving observations, de-identifying sensitive 
+data, and dynamically ingesting new information.
+
+The goal is to illustrate how standardized clinical data can be made interoperable, 
+discoverable, and privacy-preserving—exactly the kind of infrastructure needed for 
+Mayo’s AI and informatics workflows
+
+This demo proves I can transform raw EHR data into a FHIR-compliant knowledge graph with NLP 
+and de-identification, making clinical information actionable, privacy-safe, and 
+AI-ready—the same skill set needed to drive Mayo Clinic’s next generation of informatics 
+projects.
+
+1. Use these LOINC codes
+
+2345-7 → Glucose → linked to ICD-9 250.00 (Type 2 Diabetes)
+
+718-7 → Hemoglobin → linked to ICD-9 285.9 (Anemia)
+-------------------------
+Here, I query our knowledge graph with LOINC 2345-7, the universal identifier for 
+serum glucose.
+The service returns ICD-9 250.00, which represents Type 2 Diabetes.
+This demonstrates that we’ve successfully connected standard lab codes (LOINC) to 
+diagnosis codes 
+(ICD) inside our knowledge graph.
+Clinically, that means any glucose measurement can be programmatically linked to the 
+relevan
+t condition, enabling downstream analytics or decision-support tools—for example, 
+flagging
+ potential diabetes when high glucose results stream in.
+
+-------------------------------
+It’s telling you:
+
+You asked: “What diagnoses does LOINC 2345-7 (Glucose) connect to in my KG?”
+
+The API replied: {"loinc":"2345-7","dx_codes":["250.00"]} → i.e., Glucose is linked in your Neo4j graph to ICD-9 250.00 (Type 2 diabetes).
+
+How to explain the purpose of this test to Dr. Tao (quick pitch):
+
+What this endpoint does: Given a LOINC lab code, it returns the diagnosis codes your clinical knowledge graph associates with that lab.
+
+Why 2345-7 matters: 2345-7 is the standard LOINC for serum/plasma glucose. In your KG, that lab has an edge to ICD-9 250.00, so the service surfaces Type 2 diabetes as the related diagnosis.
+
+What this demonstrates:
+
+You’ve normalized labs (LOINC) and diagnoses (ICD-9) and connected them in a graph.
+
+You can programmatically retrieve clinical relationships via an API—foundation for decision support, cohort building, and feature engineering.
+
+What it is NOT: This call doesn’t diagnose a patient; it returns the knowledge-link (lab → likely/associated diagnosis) stored in your graph.
+
+Clinical workflow examples:
+
+Given incoming FHIR Observations, look up LOINC → suggest candidate problems for problem-list review.
+
+Build cohorts: “find encounters with glucose tests and diabetes codes.”
+
+Generate ML features: count of diabetes-linked labs per patient over time.
+
+========================================
+
+2.GET /fhir/observation/by_loinc/{loinc}
+
+loinc: 2345-7
+limit: 10
+-----------------------
+Here we queried /fhir/observation/by_loinc/2345-7. The response confirms that our system 
+has three glucose observations for patients P001, P002, and P003. Each entry shows the 
+observation ID, the collection date, and the patient ID. This demonstrates how raw CSV lab 
+data was cleaned, mapped to LOINC, converted to FHIR Observations, and made discoverable 
+through a standard FHIR API—exactly how a clinical system or decision-support app would 
+retrieve all glucose results for further analysis.
+--------------------------
+LOINC code context
+
+2345-7 is the standard LOINC code for Glucose (Mass/volume in serum or plasma).
+
+By using a universal code instead of local lab codes, you enable interoperability across systems.
+
+What the output shows
+
+count: 3 → There are three glucose observations stored.
+
+Observations list → Each object gives:
+
+id – the unique Observation resource ID (e.g., obs-P001-2345-7-20240101).
+
+date – when the sample was collected.
+
+patient_id – the patient identifier from your cleaned lab data.
+
+Why this is useful
+
+Clinicians or apps can quickly discover all glucose labs across multiple patients without reading every record.
+
+This is a FHIR-standard response, so any downstream application (EHR, analytics engine, decision support tool) can consume it without custom parsing.
+
+It proves your ETL pipeline successfully:
+
+Normalized local codes to LOINC.
+
+Exported the labs into FHIR Observation format.
+
+Indexed them for fast retrieval by LOINC.
+
+---------------------------------------------
+3. GET /fhir/observation/{obs_id}
+
+
+obs_id: obs-P001-2345-7-20240101
+This response confirms our pipeline successfully transformed and retrieved a single lab measurement. obs-P001-2345-7-20240101 corresponds to a glucose test 
+(LOINC 2345-7) for Patient P001 on 2024-01-01, with a value of 185 mg/dL. The format adheres
+ to the FHIR Observation standard—so any FHIR-compliant system could consume this without 
+additional mapping.
+-------------------------------
+why it is correct: 
+resourceType: "Observation" – Proper FHIR resource type.
+
+id: "obs-P001-2345-7-20240101" – Matches your patient (P001), LOINC (2345-7), and date (20240101).
+
+status: "final" – Acceptable FHIR status for a completed lab.
+
+category – Uses the official HL7 coding for laboratory observations.
+
+code – Points to LOINC 2345-7 for Glucose [Mass/volume] in Serum or Plasma.
+
+subject.reference: "Patient/P001" – Correct FHIR-style patient reference.
+
+effectiveDateTime – ISO timestamp for the collection date.
+
+valueQuantity – Contains the numeric lab value 185, normalized unit mg/dL, and UCUM system/code.
+---------------------------------
+
+4. POST /Classify_note
+{
+  "text": "Patient reports frequent urination and high fasting glucose."
+}
+-------------------------------------
+This endpoint demonstrates the NLP component of our pipeline.
+We pass a free-text clinical note (for example, ‘Patient reports frequent urination and high fasting glucose’).
+The service applies a simple classification model and returns a diagnosis category label—here, it flags diabetes.
+This shows how unstructured text can be transformed into structured, computable data that can link back to our knowledge graph (LOINC and ICD codes) or drive downstream analytics.
+
+---------------------------
+
+5. POST /fhir/observation   create Fhir observation
+
+{
+  "resourceType": "Observation",
+  "id": "obs-P004-2345-7-20240110",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "2345-7",
+        "display": "Glucose [Mass/volume] in Serum or Plasma"
+      }
+    ],
+    "text": "Lab Observation"
+  },
+  "subject": { "reference": "Patient/P004" },
+  "effectiveDateTime": "2024-01-10T00:00:00Z",
+  "valueQuantity": {
+    "value": 123,
+    "unit": "mg/dL",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg/dL"
+  }
+}
+
+-----------------------------
+Here we are creating a new FHIR Observation via POST. This JSON represents a glucose lab 
+test for Patient P004, taken on January 10, 2024, with a value of 123 mg/dL.
+The service validates core FHIR fields (e.g., resourceType, status, code, valueQuantity) 
+and then writes the record to out/fhir/json.
+It immediately updates the in-memory index, so if we now query /fhir/observation/by_loinc/23
+45-7, this new observation will appear alongside the previous ones.
+This demonstrates that our pipeline not only reads and classifies data but can ingest new 
+FHIR-compliant observations on the fly, making them instantly discoverable for analytics 
+or knowledge-graph linking
+
+---------------------------------
+
+6. POST /deid/observation  Deid observation Api
+
+{
+  "resourceType": "Observation",
+  "id": "obs-P003-2345-7-20240105",
+  "status": "final",
+  "category": [{
+    "coding": [{
+      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code": "laboratory",
+      "display": "Laboratory"
+    }]
+  }],
+  "code": {
+    "coding": [{
+      "system": "http://loinc.org",
+      "code": "2345-7",
+      "display": "Glucose [Mass/volume] in Serum or Plasma"
+    }],
+    "text": "Blood Glucose"
+  },
+  "subject": { "reference": "Patient/P003" },
+  "effectiveDateTime": "2024-01-05T00:00:00Z",
+  "valueQuantity": {
+    "value": 172,
+    "unit": "mg/dL",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg/dL"
+  }
+}
+--------------------
+The de-identification API returned a similar Observation, but with the patient reference 
+replaced (e.g., "Patient/30e7098c5b43e5f9")—this indicates that the patient identifier has 
+been anonymized.
+
+This test shows our de-identification step.
+We POSTed a glucose observation for Patient P003 to /deid/observation.
+The service validated the FHIR resource and replaced direct patient identifiers with anonymized 
+references, while preserving all clinically important information (LOINC code, value, units,
+ date).
+This means we can share or analyze clinical data safely without exposing protected health 
+information.
+It’s a key requirement for research, model training, or collaborative analytics at 
+Mayo—allowing data utility for machine learning or knowledge graph exploration while 
+protecting patient privacy.
+
+---------------------------------
+Graph:
+
+The purpose of this graph is to visually and programmatically represent clinical relationships between 
+lab tests and diagnoses so you—and teams like Dr. Tao’s—can query, analyze, and build AI or 
+decision-support tools on top of trusted, standardized connections.
+
+The graph is our clinical knowledge map. It connects standardized lab codes (LOINC) to diagnosis codes (ICD), 
+letting us instantly see and query which lab tests are clinically associated with which 
+conditions.
+This provides a shared, visual source of truth for decision support, cohort building, and AI pipelines—turning raw EHR data into a structured, queryable knowledge network.”
+
+This graph confirms our ETL pipeline successfully mapped labs to diagnoses using LOINC and ICD-9 standards. 
+The Glucose → Type 2 Diabetes and Hemoglobin → Anemia edges validate our mappings and 
+show how easily we can visualize and query clinical relationships. It’s a foundational 
+step toward AI-driven insights and decision support within Mayo’s data ecosystem.
+--------------------------
+
+---------------
+Try with the real data
+
+1. Real public data-- available dataset--medicade/mimic4/
+2. multi model AI dataset
+3. RAG
+
+-----------------
+578---Data preparetion(mimic-iv, mimic-iv-ECG-->ecg, ecg desprciton, ehr, labtests 都有图),  reinforcement learning（qWEN 2.5VL, reward function, observation sequences(think, think, answer, answer)),
+ multi datasets validation(cvd-thinking-->ptb-XL, private hospitaldata- mimic-iv-ecg)
+
+explain each fig. what your contribution.)--
+
+Pipline: each role-> take raw data--> publish paper-->get funds.
+
+------------------------------
+prepare a PPT, show your workflow.-- 5minute to present (30 min)
+
+--------------
+resume (first draft resume sept. 20/21), draft email, send it Sept. 24.) 
+----------------------------------
+
+Resume, recommendation, -- interviews (3)--from Mayo. ---
+-----------------------------------------
+AI, Data, Software. ---- Data 1st, AI, Software. ----
+
+---------------
+current jobs. 
+
+------------------------------------------
+
+FHIR server:
+
+PowerShell:
+# choose a server for this session
+$env:FHIR_BASE_URL="https://hapi.fhir.org/baseR4"
+
+# run your API
+.\.venv\Scripts\uvicorn.exe src.app:app --reload --port 8000
+
+Open http://localhost:8000/docs:
+
+GET /remote/fhir/observations/by_loinc/2345-7 (try limit=5)
+
+POST /remote/fhir/submit_observation using the same Observation JSON you’ve been testing locally (keep deid=true)
+
+
+
+
+

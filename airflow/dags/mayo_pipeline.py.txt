@@ -1,0 +1,55 @@
+from datetime import datetime
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+
+# All commands run inside the Airflow container; your repo is mounted at /opt/project
+REPO = "/opt/project"
+
+default_args = {
+    "owner": "you",
+    "start_date": datetime(2025, 1, 1),
+    "depends_on_past": False,
+    "retries": 0,
+}
+
+with DAG(
+    dag_id="mayo_pipeline",
+    default_args=default_args,
+    schedule=None,    # trigger manually; or set "@daily"
+    catchup=False,
+    description="ETL -> features -> labels -> train",
+) as dag:
+
+    etl_vitals = BashOperator(
+        task_id="etl_vitals",
+        bash_command=f"cd {REPO} && python etl/flatten_mimic_vitals.py"
+    )
+
+    etl_labs = BashOperator(
+        task_id="etl_labs",
+        bash_command=f"cd {REPO} && python etl/flatten_mimic_labs.py"
+    )
+
+    validate = BashOperator(
+        task_id="validate_with_ge",
+        bash_command=f"cd {REPO} && python validation/run_great_expectations.py",
+        trigger_rule="all_done"
+    )
+
+    features = BashOperator(
+        task_id="build_features",
+        bash_command=f"cd {REPO} && python features/build_features.py"
+    )
+
+    labels = BashOperator(
+        task_id="build_labels",
+        bash_command=f"cd {REPO} && python labels/build_labels_from_edstays.py"
+    )
+
+    train = BashOperator(
+        task_id="train_lr",
+        bash_command=f"cd {REPO} && python train/train_lr.py"
+    )
+
+    # flow
+    [etl_vitals, etl_labs] >> validate >> features >> labels >> train

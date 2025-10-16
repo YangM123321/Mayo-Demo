@@ -1,0 +1,455 @@
+[2025-10-15T18:35:32.439+0000] {processor.py:161} INFO - Started process (PID=164) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:35:32.441+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:35:32.444+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:35:32.444+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:35:32.488+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:35:32.542+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:35:32.542+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:35:32.568+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:35:32.567+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:35:32.604+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.179 seconds
+[2025-10-15T18:36:02.993+0000] {processor.py:161} INFO - Started process (PID=174) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:02.994+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:36:02.998+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:02.997+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:03.016+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:03.365+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:03.365+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:36:03.373+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:03.373+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:36:03.396+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.411 seconds
+[2025-10-15T18:36:33.758+0000] {processor.py:161} INFO - Started process (PID=184) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:33.759+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:36:33.761+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:33.761+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:33.781+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:36:33.813+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:33.813+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:36:33.825+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:36:33.824+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:36:33.849+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.096 seconds
+[2025-10-15T18:37:04.023+0000] {processor.py:161} INFO - Started process (PID=194) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:04.024+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:37:04.026+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:04.026+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:04.045+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:04.071+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:04.071+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:37:04.084+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:04.084+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:37:04.106+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.089 seconds
+[2025-10-15T18:37:34.469+0000] {processor.py:161} INFO - Started process (PID=204) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:34.470+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:37:34.472+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:34.472+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:34.489+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:37:34.515+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:34.515+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:37:34.525+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:37:34.525+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:37:34.548+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.084 seconds
+[2025-10-15T18:38:04.843+0000] {processor.py:161} INFO - Started process (PID=214) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:04.844+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:38:04.846+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:04.846+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:04.865+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:04.890+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:04.890+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:38:04.902+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:04.902+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:38:04.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.090 seconds
+[2025-10-15T18:38:35.172+0000] {processor.py:161} INFO - Started process (PID=224) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:35.173+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:38:35.175+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:35.175+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:35.194+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:38:35.223+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:35.223+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:38:35.237+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:38:35.237+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:38:35.484+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.321 seconds
+[2025-10-15T18:39:05.862+0000] {processor.py:161} INFO - Started process (PID=234) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:05.863+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:39:05.866+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:05.866+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:05.897+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:05.955+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:05.954+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:39:06.161+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:06.161+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:39:06.183+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.328 seconds
+[2025-10-15T18:39:36.532+0000] {processor.py:161} INFO - Started process (PID=244) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:36.533+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:39:36.535+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:36.534+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:36.553+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:39:36.737+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:36.737+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:39:36.746+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:39:36.746+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:39:36.766+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.241 seconds
+[2025-10-15T18:40:06.863+0000] {processor.py:161} INFO - Started process (PID=254) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:06.864+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:40:06.867+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:06.866+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:06.890+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:06.924+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:06.923+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:40:06.936+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:06.936+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:40:06.959+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.104 seconds
+[2025-10-15T18:40:37.243+0000] {processor.py:161} INFO - Started process (PID=264) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:37.244+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:40:37.246+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:37.246+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:37.267+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:40:37.300+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:37.300+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:40:37.312+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:40:37.312+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:40:37.336+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.098 seconds
+[2025-10-15T18:41:07.657+0000] {processor.py:161} INFO - Started process (PID=274) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:07.658+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:41:07.660+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:07.660+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:07.679+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:07.710+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:07.710+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:41:07.723+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:07.723+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:41:07.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.096 seconds
+[2025-10-15T18:41:38.198+0000] {processor.py:161} INFO - Started process (PID=284) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:38.199+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:41:38.201+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:38.201+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:38.220+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:41:38.248+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:38.248+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:41:38.260+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:41:38.260+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:41:38.284+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.092 seconds
+[2025-10-15T18:42:08.514+0000] {processor.py:161} INFO - Started process (PID=294) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:08.516+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:42:08.518+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:08.517+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:08.541+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:08.571+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:08.571+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:42:08.582+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:08.582+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:42:08.602+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.094 seconds
+[2025-10-15T18:42:38.967+0000] {processor.py:161} INFO - Started process (PID=304) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:38.968+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:42:38.971+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:38.970+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:38.991+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:42:39.018+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:39.017+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:42:39.028+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:42:39.028+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:42:39.051+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.090 seconds
+[2025-10-15T18:43:09.358+0000] {processor.py:161} INFO - Started process (PID=314) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:09.359+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:43:09.361+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:09.361+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:09.378+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:09.404+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:09.404+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:43:09.415+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:09.415+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:43:09.439+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.086 seconds
+[2025-10-15T18:43:39.758+0000] {processor.py:161} INFO - Started process (PID=324) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:39.759+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:43:39.761+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:39.761+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:39.781+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:43:39.811+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:39.811+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:43:39.823+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:43:39.823+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:43:39.847+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.098 seconds
+[2025-10-15T18:44:10.085+0000] {processor.py:161} INFO - Started process (PID=334) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:10.086+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:44:10.088+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:10.087+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:10.106+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:10.141+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:10.141+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:44:10.154+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:10.154+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:44:10.175+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.098 seconds
+[2025-10-15T18:44:40.521+0000] {processor.py:161} INFO - Started process (PID=344) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:40.522+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:44:40.524+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:40.523+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:40.541+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:44:40.567+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:40.567+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:44:40.578+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:44:40.578+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:44:40.602+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.089 seconds
+[2025-10-15T18:45:10.907+0000] {processor.py:161} INFO - Started process (PID=354) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:10.908+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:45:10.910+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:10.909+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:10.927+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:10.956+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:10.956+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:45:10.970+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:10.970+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:45:10.993+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.092 seconds
+[2025-10-15T18:45:41.409+0000] {processor.py:161} INFO - Started process (PID=364) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:41.410+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:45:41.412+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:41.412+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:41.428+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:45:41.453+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:41.453+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:45:41.465+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:45:41.464+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:45:41.487+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.086 seconds
+[2025-10-15T18:46:11.785+0000] {processor.py:161} INFO - Started process (PID=374) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:11.785+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:46:11.788+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:11.788+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:11.807+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:11.834+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:11.834+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:46:11.845+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:11.845+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:46:11.871+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.092 seconds
+[2025-10-15T18:46:42.199+0000] {processor.py:161} INFO - Started process (PID=384) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:42.200+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:46:42.202+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:42.202+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:42.219+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:46:42.248+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:42.248+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:46:42.262+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:46:42.262+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:46:42.286+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.094 seconds
+[2025-10-15T18:47:12.508+0000] {processor.py:161} INFO - Started process (PID=394) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:12.509+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:47:12.511+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:12.510+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:12.532+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:12.560+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:12.559+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:47:12.573+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:12.573+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:47:12.596+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.095 seconds
+[2025-10-15T18:47:42.816+0000] {processor.py:161} INFO - Started process (PID=404) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:42.817+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:47:42.820+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:42.820+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:42.843+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:47:42.881+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:42.881+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:47:42.899+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:47:42.899+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:47:42.924+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.116 seconds
+[2025-10-15T18:48:13.259+0000] {processor.py:161} INFO - Started process (PID=414) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:13.260+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:48:13.263+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:13.263+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:13.293+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:13.339+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:13.339+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:48:13.357+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:13.357+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:48:13.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.130 seconds
+[2025-10-15T18:48:43.764+0000] {processor.py:161} INFO - Started process (PID=424) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:43.765+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:48:43.768+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:43.768+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:43.800+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:48:43.838+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:43.838+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:48:43.857+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:48:43.857+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:48:43.885+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.130 seconds
+[2025-10-15T18:49:14.139+0000] {processor.py:161} INFO - Started process (PID=434) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:14.140+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:49:14.141+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:14.141+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:14.162+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:14.195+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:14.194+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:49:14.207+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:14.207+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:49:14.231+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.098 seconds
+[2025-10-15T18:49:44.490+0000] {processor.py:161} INFO - Started process (PID=444) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:44.491+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:49:44.492+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:44.492+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:44.512+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:49:44.544+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:44.544+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:49:44.558+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:49:44.557+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:49:44.581+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.097 seconds
+[2025-10-15T18:50:14.812+0000] {processor.py:161} INFO - Started process (PID=454) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:14.813+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:50:14.815+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:14.815+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:14.837+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:14.879+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:14.878+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:50:14.895+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:14.894+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:50:14.915+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.109 seconds
+[2025-10-15T18:50:45.262+0000] {processor.py:161} INFO - Started process (PID=464) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:45.264+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:50:45.266+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:45.265+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:45.288+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:50:45.324+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:45.324+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:50:45.338+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:50:45.338+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:50:45.366+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.112 seconds
+[2025-10-15T18:51:15.637+0000] {processor.py:161} INFO - Started process (PID=474) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:15.638+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:51:15.641+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:15.641+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:15.717+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:15.746+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:15.746+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:51:15.761+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:15.761+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:51:15.780+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.157 seconds
+[2025-10-15T18:51:45.922+0000] {processor.py:161} INFO - Started process (PID=484) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:45.924+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:51:45.926+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:45.925+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:45.946+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:51:45.979+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:45.979+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:51:45.993+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:51:45.993+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:51:46.018+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.103 seconds
+[2025-10-15T18:52:16.237+0000] {processor.py:161} INFO - Started process (PID=494) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:16.238+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:52:16.240+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:16.240+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:16.261+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:16.293+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:16.293+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:52:16.305+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:16.305+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:52:16.329+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.100 seconds
+[2025-10-15T18:52:46.632+0000] {processor.py:161} INFO - Started process (PID=504) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:46.634+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:52:46.637+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:46.636+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:46.667+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:52:46.695+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:46.695+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:52:46.707+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:52:46.707+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:52:46.727+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.105 seconds
+[2025-10-15T18:53:17.013+0000] {processor.py:161} INFO - Started process (PID=514) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:17.014+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:53:17.016+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:17.016+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:17.034+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:17.061+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:17.061+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:53:17.073+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:17.073+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:53:17.099+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.091 seconds
+[2025-10-15T18:53:47.517+0000] {processor.py:161} INFO - Started process (PID=524) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:47.518+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:53:47.520+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:47.519+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:47.539+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:53:47.566+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:47.566+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:53:47.578+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:53:47.578+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:53:47.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.088 seconds
+[2025-10-15T18:54:17.889+0000] {processor.py:161} INFO - Started process (PID=534) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:17.890+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:54:17.892+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:17.892+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:17.910+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:17.937+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:17.936+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:54:17.947+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:17.947+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:54:17.971+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.087 seconds
+[2025-10-15T18:54:48.239+0000] {processor.py:161} INFO - Started process (PID=544) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:48.240+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:54:48.243+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:48.242+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:48.263+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:54:48.332+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:48.332+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:54:48.380+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:54:48.379+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:54:48.403+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.169 seconds
+[2025-10-15T18:55:18.587+0000] {processor.py:161} INFO - Started process (PID=554) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:18.588+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:55:18.590+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:18.589+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:18.607+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:18.633+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:18.633+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:55:18.644+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:18.644+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:55:18.668+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.086 seconds
+[2025-10-15T18:55:49.075+0000] {processor.py:161} INFO - Started process (PID=564) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:49.077+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:55:49.080+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:49.079+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:49.099+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:55:49.125+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:49.125+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:55:49.136+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:55:49.135+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:55:49.158+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.089 seconds
+[2025-10-15T18:56:19.486+0000] {processor.py:161} INFO - Started process (PID=574) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:19.487+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:56:19.490+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:19.489+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:19.512+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:19.540+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:19.539+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:56:19.551+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:19.551+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:56:19.572+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.093 seconds
+[2025-10-15T18:56:49.817+0000] {processor.py:161} INFO - Started process (PID=584) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:49.818+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:56:49.820+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:49.819+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:49.838+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:56:49.879+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:49.878+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:56:49.911+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:56:49.911+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:56:49.974+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.164 seconds
+[2025-10-15T18:57:20.301+0000] {processor.py:161} INFO - Started process (PID=594) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:20.302+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:57:20.304+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:20.304+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:20.322+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:20.348+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:20.348+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:57:20.360+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:20.360+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:57:20.382+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.089 seconds
+[2025-10-15T18:57:50.702+0000] {processor.py:161} INFO - Started process (PID=604) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:50.703+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:57:50.704+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:50.704+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:50.723+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:57:50.750+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:50.749+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:57:50.760+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:57:50.760+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:57:50.782+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.087 seconds
+[2025-10-15T18:58:21.065+0000] {processor.py:161} INFO - Started process (PID=614) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:21.065+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:58:21.067+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:21.067+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:21.086+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:21.117+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:21.116+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:58:21.129+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:21.129+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:58:21.152+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.095 seconds
+[2025-10-15T18:58:51.551+0000] {processor.py:161} INFO - Started process (PID=624) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:51.552+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:58:51.554+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:51.554+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:51.573+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:58:51.599+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:51.599+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:58:51.610+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:58:51.610+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:58:51.635+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.090 seconds
+[2025-10-15T18:59:21.845+0000] {processor.py:161} INFO - Started process (PID=634) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:21.846+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:59:21.848+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:21.847+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:21.865+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:21.891+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:21.891+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:59:21.903+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:21.903+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:59:21.930+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.091 seconds
+[2025-10-15T18:59:52.249+0000] {processor.py:161} INFO - Started process (PID=644) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:52.250+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T18:59:52.252+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:52.251+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:52.273+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T18:59:52.309+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:52.309+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T18:59:52.322+0000] {logging_mixin.py:188} INFO - [2025-10-15T18:59:52.322+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T18:59:52.347+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.105 seconds
+[2025-10-15T19:00:22.703+0000] {processor.py:161} INFO - Started process (PID=654) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:22.704+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:00:22.706+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:22.706+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:22.724+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:22.750+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:22.750+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:00:22.761+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:22.761+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:00:22.784+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.088 seconds
+[2025-10-15T19:00:53.303+0000] {processor.py:161} INFO - Started process (PID=664) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:53.304+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:00:53.306+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:53.306+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:53.326+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:00:53.352+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:53.352+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:00:53.365+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:00:53.365+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:00:53.391+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.094 seconds
+[2025-10-15T19:01:23.623+0000] {processor.py:161} INFO - Started process (PID=674) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:23.625+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:01:23.627+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:23.626+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:23.647+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:23.677+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:23.676+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:01:23.691+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:23.691+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:01:23.716+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.100 seconds
+[2025-10-15T19:01:54.025+0000] {processor.py:161} INFO - Started process (PID=684) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:54.026+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:01:54.028+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:54.027+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:54.045+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:01:54.071+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:54.071+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:01:54.083+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:01:54.083+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:01:54.107+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.088 seconds
+[2025-10-15T19:02:24.313+0000] {processor.py:161} INFO - Started process (PID=694) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:24.315+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:02:24.316+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:24.316+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:24.332+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:24.359+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:24.359+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:02:24.374+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:24.374+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:02:24.399+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.091 seconds
+[2025-10-15T19:02:54.746+0000] {processor.py:161} INFO - Started process (PID=704) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:54.747+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:02:54.749+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:54.749+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:54.768+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:02:54.796+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:54.796+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:02:54.807+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:02:54.807+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:02:54.828+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.088 seconds
+[2025-10-15T19:03:25.149+0000] {processor.py:161} INFO - Started process (PID=714) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:25.150+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:03:25.155+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:25.155+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:25.171+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:25.201+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:25.200+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:03:25.215+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:25.215+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:03:25.240+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.099 seconds
+[2025-10-15T19:03:55.529+0000] {processor.py:161} INFO - Started process (PID=724) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:55.530+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:03:55.533+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:55.532+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:55.562+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:03:55.603+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:55.603+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:03:55.618+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:03:55.617+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:03:55.642+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.122 seconds
+[2025-10-15T19:04:25.952+0000] {processor.py:161} INFO - Started process (PID=734) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:25.953+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:04:25.955+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:25.955+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:25.973+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:25.998+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:25.998+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:04:26.011+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:26.011+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:04:26.038+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.092 seconds
+[2025-10-15T19:04:56.351+0000] {processor.py:161} INFO - Started process (PID=744) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:56.352+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:04:56.355+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:56.355+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:56.379+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:04:56.407+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:56.406+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:04:56.417+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:04:56.417+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:04:56.444+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.100 seconds
+[2025-10-15T19:05:26.680+0000] {processor.py:161} INFO - Started process (PID=754) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:26.681+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:05:26.685+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:26.684+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:26.712+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:26.748+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:26.747+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:05:26.764+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:26.763+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:05:26.790+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.119 seconds
+[2025-10-15T19:05:57.160+0000] {processor.py:161} INFO - Started process (PID=764) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:57.161+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:05:57.163+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:57.163+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:57.189+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:05:57.227+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:57.227+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:05:57.243+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:05:57.243+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:05:57.268+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.115 seconds
+[2025-10-15T19:06:27.630+0000] {processor.py:161} INFO - Started process (PID=774) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:27.632+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:06:27.634+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:27.633+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:27.652+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:27.680+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:27.680+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:06:27.692+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:27.692+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:06:27.716+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.091 seconds
+[2025-10-15T19:06:58.203+0000] {processor.py:161} INFO - Started process (PID=784) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:58.205+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:06:58.208+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:58.208+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:58.230+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:06:58.264+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:58.264+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:06:58.278+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:06:58.277+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:06:58.300+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.105 seconds
+[2025-10-15T19:07:28.496+0000] {processor.py:161} INFO - Started process (PID=794) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:28.497+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:07:28.499+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:28.498+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:28.517+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:28.547+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:28.547+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:07:28.574+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:28.574+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:07:28.603+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.114 seconds
+[2025-10-15T19:07:58.908+0000] {processor.py:161} INFO - Started process (PID=804) to work on /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:58.909+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mayo_pipeline.py for tasks to queue
+[2025-10-15T19:07:58.911+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:58.911+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:58.929+0000] {processor.py:840} INFO - DAG(s) 'mayo_pipeline' retrieved from /opt/airflow/dags/mayo_pipeline.py
+[2025-10-15T19:07:58.955+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:58.955+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-10-15T19:07:58.966+0000] {logging_mixin.py:188} INFO - [2025-10-15T19:07:58.966+0000] {dag.py:3954} INFO - Setting next_dagrun for mayo_pipeline to None, run_after=None
+[2025-10-15T19:07:58.990+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mayo_pipeline.py took 0.088 seconds

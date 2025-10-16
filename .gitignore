@@ -1,0 +1,44 @@
+# Ignore virtual environments
+.venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore data and models
+out/
+models/
+*.db
+
+# Ignore local env
+.env
+
+# Ignore IDE/system files
+.vscode/
+Thumbs.db
+.DS_Store
+@"
+# Python / env
+.venv/
+__pycache__/
+*.pyc
+
+# Data & outputs
+out/
+output/
+mlruns/
+data/processed/
+data/interim/
+*.parquet
+*.png
+*.log
+
+# Airflow runtime logs
+airflow/logs/
+
+# Big tools / jars
+synthea-with-dependencies.jar
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+"@ | Out-File -Encoding UTF8 -Append .gitignore

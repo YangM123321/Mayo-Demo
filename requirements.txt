@@ -1,0 +1,14 @@
+pandas
+numpy
+pyarrow
+python-dateutil
+py2neo
+scikit-learn
+fastapi
+uvicorn[standard]
+matplotlib
+
+pydantic        # used explicitly for AdmissionRequest and FHIRResource models  
+joblib          # for loading the saved sklearn model  
+requests        # used for remote FHIR GET/POST calls  
+python-dotenv   # to load your .env with FHIR_BASE_URL, Neo4j creds, etc.

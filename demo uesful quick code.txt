@@ -1,0 +1,58 @@
+Run Notebook:
+jupyter lab --port 8890
+
+
+-------------
+
+phase 3: add logs -- I forgot
+
+cd C:\Users\yangm\Desktop\Mayo-Demo
+.\.venv\Scripts\Activate.ps1
+
+curl.exe -X POST "http://localhost:8000/predict/admission" `
+  -H "Content-Type: application/json" `
+  -d '{\"features\": {\"BP_SYS_mean\": 135, \"BP_SYS_last\": 140, \"BP_DIA_mean\": 85}}'
+
+
+
+-----------------------------
+Start Automation (Airflow-DAGs):
+
+cd C:\Users\yangm\Desktop\Mayo-Demo
+.\.venv\Scripts\Activate.ps1
+-----------------------------
+docker compose down
+docker compose build
+docker compose up -d airflow-scheduler airflow-webserver
+
+----------------------------
+docker compose up -d --build
+docker compose up airflow-init
+docker compose up -d
+Open the UI: http://localhost:8080
+ (user/pass: airflow / airflow)
+--------------------------------------
+cd C:\Users\yangm\Desktop\Mayo-Demo
+.\.venv\Scripts\Activate.ps1
+
+docker compose stop airflow-webserver airflow-scheduler
+
+docker compose up --no-deps airflow-init
+docker compose up -d airflow-webserver airflow-scheduler
+docker compose logs -f airflow-webserver
+
+------------------------
+Mydemo: start with self created lab data, DATA cleaning, KG, Train a tiny NLP baseline & make a plot , API, ADD FHIR
+, Swagger,  neo4j, de-identification, synthea fhir, Generate synthetic patients, 
+
+Connect to local HAPI
+, Integrating the synthetic FHIR pieces into your existing FastAPI app, 
+USE MIMIC-IV OPEN Source data, visulizaiton-quick_plots.py ,Map a small slice to FHIR and push to HAPI
+,Open source data using Neo4j-keep original neo4j loader for synthea,
+Neo4j for Synthea, data qulity validation,  
+jupytor notebook(10+ plots), Add logistic regression baseline,Add ROC curve and AUC plots,Add fairness/bias checks in Modeling.ipynb
+Phase 3: Model Packaging & Serving , Quick local test without Docker, Dockerize it, Phase 4: automation-Airflow with Docker Compose
+
+
+
+

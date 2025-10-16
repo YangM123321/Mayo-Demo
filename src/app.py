@@ -1,0 +1,404 @@
+﻿# ---- top of src/app.py ----
+from fastapi import FastAPI, HTTPException
+from pathlib import Path
+
+app = FastAPI(title="Clinical KG + NLP demo")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+from fastapi import FastAPI
+from pydantic import BaseModel, RootModel
+from py2neo import Graph
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+import re
+
+# add new to Connect to a synthetic FHIR server
+
+import os, json, requests
+from typing import Any, Dict, Optional
+from fastapi import HTTPException
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+def fhir_base() -> str:
+    base = os.getenv("FHIR_BASE_URL", "").strip()
+    if not base:
+        raise RuntimeError("Set FHIR_BASE_URL env var or .env")
+    return base
+
+# tiny helper to build FHIR query params
+def fhir_params(params: Dict[str, str]) -> Dict[str, str]:
+    # HAPI accepts _count, code, etc.
+    return {k: v for k, v in params.items() if v is not None}
+
+app = FastAPI(title="Clinical KG + NLP demo")
+
+# replaces: graph = Graph("bolt://localhost:7687", auth=("neo4j","testpass"))
+NEO4J_URI = os.getenv("NEO4J_URI")  # e.g., bolt://host.docker.internal:7687
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASS = os.getenv("NEO4J_PASS", "testpass")
+graph = Graph(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS)) if NEO4J_URI else None
+
+
+train_text = ["polyuria high glucose", "low hemoglobin", "normal check"]
+train_y    = ["diabetes","anemia","other"]
+vec = TfidfVectorizer().fit(train_text)
+clf = LogisticRegression(max_iter=500).fit(vec.transform(train_text), train_y)
+
+# end New
+
+# start original 
+def clean_text(t):
+    t = t.lower()
+    t = re.sub(r"[^a-z0-9\s]", " ", t)
+    return re.sub(r"\s+"," ", t).strip()
+
+class NoteIn(BaseModel):
+    text: str
+
+# --- NEW: generic FHIR payload wrapper ---
+
+class FHIRResource(RootModel[Dict[str, Any]]):
+    pass
+
+# --- end NEW ---
+
+@app.get("/dx_by_loinc/{loinc}")
+def dx_by_loinc(loinc: str):
+    # Guard if Neo4j isn’t configured
+    if graph is None:
+        raise HTTPException(status_code=503, detail="Neo4j not configured (set NEO4J_URI).")
+    
+    # Original query
+    q = "MATCH (:Lab {loinc:$loinc})-[]->(d:Diagnosis) RETURN collect(d.code) AS dx"
+    res = graph.run(q, loinc=loinc).data()
+    
+    return {"loinc": loinc, "dx_codes": (res[0]["dx"] if res else [])}
+
+
+@app.post("/classify_note")
+def classify(note: NoteIn):
+    X = vec.transform([clean_text(note.text)])
+    yhat = clf.predict(X)[0]
+    return {"label": yhat}
+
+from fastapi.responses import JSONResponse
+from pathlib import Path
+import json
+
+
+# FHIR local store
+FHIR_DIR   = BASE_DIR / "out" / "fhir"
+FHIR_INDEX = FHIR_DIR / "index.json"
+
+def load_fhir_index():
+    if FHIR_INDEX.exists():
+        with open(FHIR_INDEX, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+fhir_index_cache = load_fhir_index()
+
+@app.get("/fhir/observation/{obs_id}")
+def fhir_observation(obs_id: str):
+    path = FHIR_DIR / f"{obs_id}.json"
+    if not path.exists():
+        return JSONResponse({"detail": "Observation not found"}, status_code=404)
+    with open(path, "r", encoding="utf-8") as f:
+        return JSONResponse(json.load(f))
+
+@app.get("/fhir/observation/by_loinc/{loinc}")
+def fhir_by_loinc(loinc: str, limit: int = 10):
+    matches = [x for x in fhir_index_cache if x.get("loinc") == loinc][:max(1, min(limit, 100))]
+    # return just ids & minimal info to keep payload small
+    return JSONResponse({"loinc": loinc, "count": len(matches), "observations": [{"id": m["id"], "date": m["date"], "patient_id": m["patient_id"]} for m in matches]})
+
+from fastapi import Body
+from fastapi import HTTPException, status
+from datetime import datetime
+
+def _is_iso_datetime(s: str) -> bool:
+    try:
+        # allow 'YYYY-MM-DD' or full ISO datetime
+        if len(s) == 10:  # YYYY-MM-DD
+            datetime.strptime(s, "%Y-%m-%d")
+            return True
+        datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return True
+    except Exception:
+        return False
+
+def _validate_observation(obs: dict):
+    # resourceType
+    if obs.get("resourceType") != "Observation":
+        raise HTTPException(status_code=400, detail="resourceType must be 'Observation'")
+
+    # id
+    if not isinstance(obs.get("id"), str) or not obs["id"]:
+        raise HTTPException(status_code=400, detail="Observation.id is required")
+
+    # status
+    if obs.get("status") not in {"final", "amended", "corrected", "preliminary"}:
+        raise HTTPException(status_code=400, detail="Observation.status invalid or missing")
+
+    # code.coding[0].system/code (expecting LOINC)
+    try:
+        coding0 = obs["code"]["coding"][0]
+    except Exception:
+        raise HTTPException(status_code=400, detail="Observation.code.coding[0] is required")
+
+    if coding0.get("system") != "http://loinc.org":
+        raise HTTPException(status_code=400, detail="Observation.code.coding[0].system must be http://loinc.org")
+
+    if not isinstance(coding0.get("code"), str) or not coding0["code"]:
+        raise HTTPException(status_code=400, detail="Observation.code.coding[0].code (LOINC) is required")
+
+    # subject.reference
+    try:
+        subj_ref = obs["subject"]["reference"]
+    except Exception:
+        raise HTTPException(status_code=400, detail="Observation.subject.reference is required")
+    if not isinstance(subj_ref, str) or not subj_ref.startswith("Patient/"):
+        raise HTTPException(status_code=400, detail="subject.reference must be like 'Patient/<id>'")
+
+    # effectiveDateTime
+    eff = obs.get("effectiveDateTime")
+    if not isinstance(eff, str) or not _is_iso_datetime(eff):
+        raise HTTPException(status_code=400, detail="effectiveDateTime must be ISO date or datetime")
+
+    # valueQuantity.{value, unit, system, code}
+    try:
+        vq = obs["valueQuantity"]
+        float(vq["value"])
+        if not vq.get("unit"):
+            raise ValueError
+        if not vq.get("system") or not vq.get("code"):
+            raise ValueError
+    except Exception:
+        raise HTTPException(status_code=400, detail="valueQuantity must include numeric value, unit, system, code")
+
+@app.post("/fhir/observation", status_code=status.HTTP_201_CREATED)
+def create_fhir_observation(obs: dict = Body(...)):
+    """
+    Minimal validator + saver:
+    - Checks core FHIR Observation fields
+    - Writes to out/fhir/<id>.json
+    - Updates in-memory index so it's immediately discoverable
+    """
+    _validate_observation(obs)
+
+    # Save JSON
+    obs_id = obs["id"]
+    out_path = FHIR_DIR / f"{obs_id}.json"
+    FHIR_DIR.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(obs, f, ensure_ascii=False, indent=2)
+
+    # Update index in memory and on disk (best-effort)
+    loinc_code = obs["code"]["coding"][0]["code"]
+    # date component from effectiveDateTime
+    eff_str = obs["effectiveDateTime"]
+    date_only = eff_str[:10] if len(eff_str) >= 10 else eff_str
+
+    # patient id from subject.reference
+    patient_id = obs["subject"]["reference"].split("/", 1)[-1]
+
+    # avoid duplicates in cache
+    global fhir_index_cache
+    fhir_index_cache = [x for x in fhir_index_cache if x.get("id") != obs_id]
+    fhir_index_cache.append({
+        "id": obs_id,
+        "loinc": loinc_code,
+        "patient_id": patient_id,
+        "date": date_only,
+        "path": str(out_path),
+    })
+    # persist the index
+    with open(FHIR_INDEX, "w", encoding="utf-8") as f:
+        json.dump(fhir_index_cache, f, ensure_ascii=False, indent=2)
+
+    return {"detail": "created", "id": obs_id, "path": str(out_path)}
+
+# --- NEW: query a remote synthetic FHIR server by LOINC ---
+@app.get("/remote/fhir/observations/by_loinc/{loinc}")
+def remote_fhir_by_loinc(loinc: str, limit: int = 10):
+    base = fhir_base()
+    url = f"{base}/Observation"
+    params = fhir_params({
+        "code": f"http://loinc.org|{loinc}",
+        "_count": str(max(1, min(limit, 100)))
+    })
+    try:
+        r = requests.get(url, params=params, timeout=15, headers={"Accept": "application/fhir+json"})
+        r.raise_for_status()
+        bundle = r.json()
+    except requests.RequestException as e:
+        raise HTTPException(status_code=502, detail=f"FHIR GET failed: {e}")
+
+    entries = bundle.get("entry", []) or []
+    out = []
+    for e in entries[:limit]:
+        res = e.get("resource", {}) or {}
+        out.append({
+            "id": res.get("id"),
+            "status": res.get("status"),
+            "effectiveDateTime": res.get("effectiveDateTime") or res.get("issued"),
+            "valueQuantity": res.get("valueQuantity"),
+            "subject": res.get("subject"),
+            "code": res.get("code"),
+        })
+    return {"server": base, "loinc": loinc, "count": len(out), "observations": out}
+
+# --- NEW: submit (optionally de-identified) Observation to remote FHIR server ---
+@app.post("/remote/fhir/submit_observation")
+def remote_fhir_submit_observation(payload: FHIRResource, deid: bool = True):
+    """
+    Submit an Observation to the configured FHIR server.
+    Set ?deid=false to send as-is (demo only).
+    """
+    base = fhir_base()
+    url = f"{base}/Observation"
+    obs = payload.root
+
+
+
+    if deid:
+        # reuse your existing de-id function
+        obs = deid_observation(obs)
+
+    if obs.get("resourceType") != "Observation":
+        raise HTTPException(status_code=400, detail="resourceType must be 'Observation'")
+
+    try:
+        r = requests.post(url, json=obs, headers={"Content-Type": "application/fhir+json"}, timeout=15)
+        r.raise_for_status()
+        outcome = r.json()
+    except requests.RequestException as e:
+        raise HTTPException(status_code=502, detail=f"FHIR POST failed: {e}")
+
+    return {"server": base, "status": "submitted", "id": outcome.get("id"), "outcome": outcome}
+
+
+from src.deid import deid_observation
+
+
+@app.post("/deid/observation")
+def deid_observation_api(obs: dict):
+    """Return a de-identified copy of a FHIR Observation."""
+    try:
+        return deid_observation(obs)
+    except Exception as e:
+        raise HTTPException(400, f"De-id failed: {e}")
+
+
+# ====== ML serving: admission model ======
+from pydantic import BaseModel, Field
+from typing import Dict, Optional, List
+import joblib, json, numpy as np, pandas as pd
+
+MODEL_PATH = BASE_DIR / "models" / "admit_lr.joblib"
+FEAT_PATH  = BASE_DIR / "models" / "feature_list.json"
+FEATURES_PARQUET = BASE_DIR / "data" / "processed" / "features.parquet"
+
+if not (MODEL_PATH.exists() and FEAT_PATH.exists()):
+    print("[WARN] ML artifacts not found; /predict/admission will 503 until you save models.")
+    _model = None
+    _feat_names: List[str] = []
+else:
+    _model = joblib.load(MODEL_PATH)
+    _feat_names = json.loads(FEAT_PATH.read_text())
+
+class AdmissionRequest(BaseModel):
+    features: Dict[str, float] = Field(default_factory=dict)
+    patient_id: Optional[int] = None
+
+def _align_features(feat_in: Dict[str, float]) -> pd.DataFrame:
+    x = {k: np.nan for k in _feat_names}
+    for k, v in feat_in.items():
+        if k in x:
+            x[k] = v
+    return pd.DataFrame([x])
+
+@app.post("/predict/admission")
+def predict_admission(payload: AdmissionRequest):
+    if _model is None or not _feat_names:
+        raise HTTPException(503, "Model not loaded. Train & save artifacts first.")
+
+    if payload.features:
+        X = _align_features(payload.features)
+    elif payload.patient_id is not None:
+        try:
+            feat = pd.read_parquet(FEATURES_PARQUET)
+        except Exception as e:
+            raise HTTPException(500, f"Could not read features table: {e}")
+        row = feat.loc[feat["patient_id"] == payload.patient_id]
+        if row.empty:
+            raise HTTPException(404, f"No features for patient_id={payload.patient_id}")
+        row = row.drop(columns=["patient_id"]).iloc[0].to_dict()
+        X = _align_features(row)
+    else:
+        raise HTTPException(400, "Provide either features or patient_id")
+
+    proba = float(_model.predict_proba(X)[:, 1][0])
+    label = int(proba >= 0.5)
+    return {"label": label, "probability": proba, "features_used": _feat_names}
+
+# src/app_mlflow.py
+from fastapi import FastAPI
+from pydantic import BaseModel
+import numpy as np, json
+from pathlib import Path
+
+import mlflow, mlflow.pyfunc
+import joblib
+
+# --- where your curated features live ---
+FEATURES = ["2345-7", "718-7"]  # same as training
+MODELS = Path("models")
+
+# --- init model: prefer MLflow registry, fallback to joblib ---
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_registry_uri("sqlite:///mlflow.db")
+
+def load_model():
+    try:
+        return mlflow.pyfunc.load_model("models:/admission_lr@champion")
+    except Exception:
+        # fallback to local artifact from training script
+        return joblib.load(MODELS / "admit_mlflow_lr.joblib")
+
+model = load_model()
+app = FastAPI(title="Mayo Demo API (MLflow)")
+
+class ObsIn(BaseModel):
+    loinc_2345_7: float | None = None
+    loinc_718_7:  float | None = None
+
+def to_feature_vec(x: ObsIn):
+    # order must match FEATURES
+    vals = {
+        "2345-7": x.loinc_2345_7 if x.loinc_2345_7 is not None else 0.0,
+        "718-7":  x.loinc_718_7  if x.loinc_718_7  is not None else 0.0,
+    }
+    return np.array([[vals[f] for f in FEATURES]])
+
+@app.get("/")
+def root():
+    return {"status": "ok", "model": "admission_lr", "features": FEATURES}
+
+@app.post("/predict/admission")
+def predict(x: ObsIn):
+    X = to_feature_vec(x)
+    try:
+        # mlflow.pyfunc returns proba via predict (if wrapped); joblib LR has predict_proba
+        if hasattr(model, "predict_proba"):
+            p = float(model.predict_proba(X)[:,1][0])
+        else:
+            p = float(np.ravel(model.predict(X))[0])  # pyfunc fallback
+    except Exception:
+        p = float(np.ravel(model.predict(X))[0])
+    return {"admission_risk": p, "features_order": FEATURES}
+

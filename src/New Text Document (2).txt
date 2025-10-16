@@ -1,0 +1,34 @@
+# src/train_admission_mlflow.py
+from pathlib import Path
+import json, joblib, mlflow, mlflow.sklearn
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+
+OUT = Path("out"); MODELS = Path("models"); MODELS.mkdir(exist_ok=True)
+mlflow.set_tracking_uri("file://" + str((Path.cwd() / "mlruns").resolve()))
+mlflow.set_experiment("admission_risk_demo")
+
+df = pd.read_parquet(OUT / "labs_curated.parquet")
+df["admit_label"] = ((df["loinc"]=="2345-7") & (df["lab_value"]>=150)) | ((df["loinc"]=="718-7") & (df["lab_value"]<11.5))
+df["admit_label"] = df["admit_label"].astype(int)
+feat = (df.pivot_table(index=["patient_id","encounter_id"], columns="loinc",
+                       values="lab_value", aggfunc="mean")
+          .reset_index().rename_axis(None, axis=1)).fillna(0.0)
+X = feat[["2345-7","718-7"]].values if {"2345-7","718-7"}.issubset(feat.columns) else feat.iloc[:,2:].values
+y = (df.groupby(["patient_id","encounter_id"])["admit_label"].max()
+       .reindex(zip(feat["patient_id"], feat["encounter_id"]))
+       .astype(int).values)
+
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+
+with mlflow.start_run(run_name="logreg_baseline"):
+    model = LogisticRegression(max_iter=200).fit(Xtr, ytr)
+    proba = model.predict_proba(Xte)[:,1]
+    auc = roc_auc_score(yte, proba)
+    mlflow.log_metric("roc_auc", auc)
+    mlflow.log_param("model", "LogisticRegression")
+    mlflow.sklearn.log_model(model, artifact_path="model")
+    joblib.dump(model, MODELS / "admit_mlflow_lr.joblib")
+    print("Logged to MLflow, AUC:", auc)

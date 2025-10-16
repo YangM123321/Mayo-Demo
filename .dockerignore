@@ -1,0 +1,9 @@
+.venv
+__pycache__
+.ipynb_checkpoints
+*.ipynb
+out/predictions.csv
+out/fhir/*.json
+data/raw
+*.log
+.git

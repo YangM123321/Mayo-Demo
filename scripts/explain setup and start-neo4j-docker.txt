@@ -1,0 +1,3 @@
+start-neo4j-docker.ps1 → starts your Neo4j Docker container.
+
+setup.ps1 → was probably used to prepare your environment or pull Synthea data.

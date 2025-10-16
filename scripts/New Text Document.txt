@@ -1,0 +1,38 @@
+from neo4j import GraphDatabase
+import json, os
+from pathlib import Path
+
+# --- Neo4j connection ---
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASS = "test"   # <-- replace if you set a custom password
+
+driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
+
+# --- Path to your Synthea output (JSON bundles) ---
+synthea_path = Path(r"C:\Users\yangm\Desktop\Mayo-Demo\data\synthea_output")
+
+def load_patient(tx, patient):
+    tx.run(
+        """
+        MERGE (p:Patient {id:$id})
+        SET p.name = $name, p.birthDate = $birthDate
+        """,
+        id=patient['id'],
+        name=patient.get('name', [{}])[0].get('text','Unknown'),
+        birthDate=patient.get('birthDate','Unknown')
+    )
+
+def main():
+    for file in synthea_path.glob("*.json"):
+        with open(file, encoding="utf-8") as f:
+            bundle = json.load(f)
+            for entry in bundle.get('entry', []):
+                resource = entry.get('resource', {})
+                if resource.get('resourceType') == 'Patient':
+                    with driver.session() as session:
+                        session.write_transaction(load_patient, resource)
+    print("✅ Finished loading Synthea patients into Neo4j.")
+
+if __name__ == "__main__":
+    main()
